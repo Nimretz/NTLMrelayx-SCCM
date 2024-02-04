@@ -140,14 +140,14 @@ class SCCMAttack:
         self.cert = CryptoTools.createCertificateForKey(self.key, u"ConfigMgr Client")
 
         if writeToTmp:
-            with open("/tmp/key.pem", "wb") as f:
+            with open("C:\\users\\public\\key.pem", "wb") as f:
                 f.write(self.key.private_bytes(
                     encoding=serialization.Encoding.PEM, 
                     format=serialization.PrivateFormat.TraditionalOpenSSL, 
                     encryption_algorithm=serialization.BestAvailableEncryption(b"mimikatz"),
                 ))
 
-            with open("/tmp/certificate.pem", "wb") as f:
+            with open("C:\\users\\public\\certificate.pem", "wb") as f:
                 f.write(self.cert.public_bytes(serialization.Encoding.PEM))
 
 
